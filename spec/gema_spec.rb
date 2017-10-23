@@ -31,6 +31,9 @@ RSpec.describe Gema do
 	   expect(@nutrientes[0].glucidos).to eq(0.0)
 	 end
 
+	it "Método para obtener los lípidos de un alimento." do
+	   expect(@nutrientes[0].lipidos).to eq(19.5)
+	 end
 
 
   end
