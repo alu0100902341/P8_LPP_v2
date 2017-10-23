@@ -35,6 +35,9 @@ RSpec.describe Gema do
 	   expect(@nutrientes[0].lipidos).to eq(19.5)
 	 end
 
+	it "Método para obtener un alimento formateado." do
+	   expect(@nutrientes[0].to_s).to eq("Huevo frito P(14.1) G(0.0) L(19.5)")
+	 end
 
   end
 

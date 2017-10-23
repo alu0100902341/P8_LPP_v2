@@ -11,4 +11,8 @@ attr_accessor :nombre, :proteinas, :glucidos, :lipidos, :kcal
 	@kcal = 0
   end
 
+  def to_s
+	"#{@nombre} P(#{@proteinas}) G(#{@glucidos}) L(#{@lipidos})"
+  end
+
 end
