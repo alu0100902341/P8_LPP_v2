@@ -1,4 +1,5 @@
 require "spec_helper"
+require "./lib/alimento"
 
 RSpec.describe Gema do
   it "has a version number" do
@@ -11,4 +12,5 @@ RSpec.describe Gema do
 
   describe Alimento do
   end
+
 end
