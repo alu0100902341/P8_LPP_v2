@@ -21,7 +21,11 @@ RSpec.describe Gema do
 
 	it "Método para obtener el nombre del alimento." do
 	   expect(@nutrientes[0].nombre).to eq("Huevo frito")
-	 end	
+	 end
+
+	it "Método para obtener la proteína de un elemento." do
+	   expect(@nutrientes[0].proteinas).to eq(14.1)
+	 end
 
   end
 
