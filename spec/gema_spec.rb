@@ -39,6 +39,10 @@ RSpec.describe Gema do
 	   expect(@nutrientes[0].to_s).to eq("Huevo frito P(14.1) G(0.0) L(19.5)")
 	 end
 
+	it "Método para obtener las Kcal de un alimento." do
+	   expect(@nutrientes[0].kcal).to eq(231.9)
+	 end
+
   end
 
 end

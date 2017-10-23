@@ -15,4 +15,9 @@ attr_accessor :nombre, :proteinas, :glucidos, :lipidos, :kcal
 	"#{@nombre} P(#{@proteinas}) G(#{@glucidos}) L(#{@lipidos})"
   end
 
+  def kcal
+	@kcal = ( (4 * @proteinas) + (4 * @glucidos) + (9 * @lipidos) )
+	return @kcal
+  end
+
 end
