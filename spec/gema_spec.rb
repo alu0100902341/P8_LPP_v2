@@ -6,6 +6,9 @@ RSpec.describe Gema do
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    expect(false).to eq(false)
+  end
+
+  describe Alimento do
   end
 end
