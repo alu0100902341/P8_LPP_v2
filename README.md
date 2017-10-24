@@ -1,8 +1,24 @@
 # Gema
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gema`. To experiment with that code, run `bin/console` for an interactive prompt.
+In this gem you will find various TDD (spec/gema_spec.rb) related to our main class (alimento.rb).
 
-TODO: Delete this and the text above, and describe your gem
+TDD's done:
+    -Get food name method.
+    -Proteins attribute.
+    -Carbohydrates attribute.
+    -Lipids attribute.
+    -@name method.
+    -@proteins method.
+    -@Carbohydrates method.
+    -@Lipids method.
+    -to_s method.
+    -@kcal method.
+    
+ To initialize our repository we used $ bundle install gema
+ Then we modify gema.gemspec
+ And then we used $ git remote add p6 https://github.com/ULL-ESIT-LPP-1718/tdd-alu0100902341
+ to enable the push function.
+ For every TDD we commited and pushed.
 
 ## Installation
 
