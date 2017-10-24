@@ -18,25 +18,40 @@ TDD's done:
  To create our project hierarchy $ bundle gem gema.
  This command created a variaty of directories and files.
  
- #/bin/console -> Initialize the interpreter if needed.
- #/lib -> Classes
- #/lib/gem.rb -> Module of our gem
- #/spec -> TDD
- #.gitignore
- #.rspec
- #.travis.yml
- #CODE_OF_CONDUCT.md
- #Gemfile -> Dscribes the gem dependencies required to execute associated Ruby code.
- #LICENSE.txt
- #README.md
- #Rakefile
- #gema
- #gema.gemspec -> Contains the information of a gem.
- 
+  /bin/console -> Initialize the interpreter if needed.
+  
+  /lib -> Classes
+  
+  /lib/gem.rb -> Module of our gem
+  
+  /spec -> TDD
+  
+  .gitignore
+  
+  .rspec
+  
+  .travis.yml
+  
+  CODE_OF_CONDUCT.md
+  
+  Gemfile -> Dscribes the gem dependencies required to execute associated Ruby code.
+  
+  LICENSE.txt
+  
+  README.md
+  
+  Rakefile
+  
+  gema
+  
+  gema.gemspec -> Contains the information of a gem.
  
  Then we modify gema.gemspec
+ 
  And then we used $ git remote add p6 https://github.com/ULL-ESIT-LPP-1718/tdd-alu0100902341
+ 
  to enable the push function.
+ 
  For every TDD we commited and pushed.
 
 ## Installation
