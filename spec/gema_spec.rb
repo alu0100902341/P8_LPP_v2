@@ -1,5 +1,6 @@
 require "spec_helper"
 require "./lib/alimento"
+require "./lib/lista"
 
 RSpec.describe Gema do
   it "has a version number" do
@@ -42,6 +43,10 @@ RSpec.describe Gema do
 	it "Método para obtener las Kcal de un alimento." do
 	   expect(@nutrientes[0].kcal).to eq(231.9)
 	 end
+
+  end
+
+  describe List do
 
   end
 
