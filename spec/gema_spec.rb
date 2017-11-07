@@ -79,6 +79,10 @@ RSpec.describe Gema do
 	   expect(@lista[-1].value).to eq(6)
 	 end
 
+	it "Se puede extraer el primer elemento de la lista." do
+	   expect(@lista.shift).to eq(@nodo)
+	 end
+
   end
 
 end
