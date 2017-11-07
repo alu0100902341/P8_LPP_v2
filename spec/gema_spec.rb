@@ -95,22 +95,26 @@ end
 
 		@grupos = [ "Huevos, lácteos y helados", "Carnes y derivados", "Pescados y mariscos", "ALimentos grasos", "Alimentos ricos en carbohidratos", "Verduras y Hortalizas", "Frutas" ]
 
-		@gp1 = List.new( [ Alimento.new("Huevo frito", 14.1, 0.0, 19.5), Alimento.new("Leche de vaca", 3.3, 4.8, 3.2), Alimento.new("Yogurt", 3.8, 4.9, 3.8) ] )
+		@gp1 = Lista.new( [ Alimento.new("Huevo frito", 14.1, 0.0, 19.5), Alimento.new("Leche de vaca", 3.3, 4.8, 3.2), Alimento.new("Yogurt", 3.8, 4.9, 3.8) ] )
 
-		@gp2 = List.new( [ Alimento.new("Cerdo", 21.5, 0.0, 6.3), Alimento.new("Ternera", 21.1, 0.0, 3.1), Alimento.new("Pollo", 20.6, 0.0, 5.6) ] )
+		@gp2 = Lista.new( [ Alimento.new("Cerdo", 21.5, 0.0, 6.3), Alimento.new("Ternera", 21.1, 0.0, 3.1), Alimento.new("Pollo", 20.6, 0.0, 5.6) ] )
 
-		@gp3 = List.new( [ Alimento.new("Bacalao", 17.7, 0.0, 0.4), Alimento.new("Atún", 21.5, 0.0, 15.5), Alimento.new("Salmón", 19.9, 0.0, 13.6) ] )
+		@gp3 = Lista.new( [ Alimento.new("Bacalao", 17.7, 0.0, 0.4), Alimento.new("Atún", 21.5, 0.0, 15.5), Alimento.new("Salmón", 19.9, 0.0, 13.6) ] )
 
-		@gp4 = List.new( [ Alimento.new("Aceite de oliva", 0.0, 0.2, 99.6), Alimento.new("Mantequilla", 0.7, 0.0, 83.2), Alimento.new("Chocolate", 5.3, 47.0, 30.0) ] )
+		@gp4 = Lista.new( [ Alimento.new("Aceite de oliva", 0.0, 0.2, 99.6), Alimento.new("Mantequilla", 0.7, 0.0, 83.2), Alimento.new("Chocolate", 5.3, 47.0, 30.0) ] )
 
-		@gp5 = List.new( [ Alimento.new("Azúcar", 0.0, 99.8, 0.0), Alimento.new("Arroz", 6.8, 77.7, 0.6), Alimento.new("Lentejas", 23.5, 52.0, 1.4), Alimento.new("Papas", 2.0, 15.4, 0.1) ] )
+		@gp5 = Lista.new( [ Alimento.new("Azúcar", 0.0, 99.8, 0.0), Alimento.new("Arroz", 6.8, 77.7, 0.6), Alimento.new("Lentejas", 23.5, 52.0, 1.4), Alimento.new("Papas", 2.0, 15.4, 0.1) ] )
 
-		@gp6 = List.new( [ Alimento.new("Manzana", 0.3, 12.4, 0.4), Alimento.new("Plátanos", 1.2, 21.4, 0.2), Alimento.new("Pera", 0.5, 12.7, 0.3) ] )
+		@gp6 = Lista.new( [ Alimento.new("Manzana", 0.3, 12.4, 0.4), Alimento.new("Plátanos", 1.2, 21.4, 0.2), Alimento.new("Pera", 0.5, 12.7, 0.3) ] )
 
-		@grupos_alimentos = Grupos_alimentos.new( @grupos, [ @gp1, @gp2, @gp3, @gp4, @gp5, @gp6 ])
+		@grupos_alimentos = Grupo_alimentos.new( @grupos, [ @gp1, @gp2, @gp3, @gp4, @gp5, @gp6 ])
 	end
 
 
-end
+	it "Comprobar pertenencia a las clases." do
+	   expect(@grupos_alimentos.class).to eq(Grupo_alimentos)
+	 end
+
+  end
 
 end
