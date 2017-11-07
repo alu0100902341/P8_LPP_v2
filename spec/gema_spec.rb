@@ -115,6 +115,10 @@ end
 	   expect(@grupos_alimentos.class).to eq(Grupo_alimentos)
 	 end
 
+	it "Comprobar pertenencia a jerarquía." do
+	   expect(@grupos_alimentos.class.superclass).to eq(Lista)
+	 end
+
   end
 
 end
