@@ -83,6 +83,13 @@ RSpec.describe Gema do
 	   expect(@lista.shift).to eq(@nodo)
 	 end
 
+	it "Se puede extraer el último elemento de la lista." do
+	   nodo_aux = @lista[-2]
+	   @lista.pop
+	   expect(@lista[-1]).to eq(nodo_aux)
+	 end
+
+
   end
 
 end
