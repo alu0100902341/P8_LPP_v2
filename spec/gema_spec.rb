@@ -48,6 +48,37 @@ RSpec.describe Gema do
 
   describe List do
 
+	before :each do
+
+		@nodo = List.new(0, 1, 5)
+		@lista = [List.new(0, 1, 5) ,List.new(1, 2, 0), List.new(2, 3, 1), List.new(3, 4, 2), List.new(4, 5, 3), List.new(5, 0, 4) ]
+
+	end
+
+	it "Debe existir un nodo con su valor." do
+	   expect(@nodo.value).to eq(0)
+	 end
+
+	it "Debe existir un nodo con su siguiente." do
+	   expect(@nodo.next).to eq(1)
+	 end
+
+	it "Debe existir un nodo con su previo." do
+	   expect(@nodo.prev).to eq(5)
+	 end
+
+	it "Debe existir una lista con su cabeza y su cola." do
+	   expect(@lista[0].prev).to eq(@lista[-1].value)
+	   expect(@lista[-1].next).to eq(@lista[0].value)
+	 end
+
+	it "Se puede insertar un elemento en la Lista." do
+	   @lista << List.new(6, @lista[0].value, @lista[-1].value)
+	   @lista[0].prev = @lista[-1].value
+	   @lista[-2].next = @lista[-1].value
+	   expect(@lista[-1].value).to eq(6)
+	 end
+
   end
 
 end
