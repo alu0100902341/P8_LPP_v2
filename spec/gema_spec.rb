@@ -59,6 +59,11 @@ RSpec.describe Gema do
 		@lista2 = [nil, 1, nil]
 		@lista_dl2 = Lista.new(@lista2)
 
+		@grupos = ['Huevos, lácteos y helados', 'Carnes y derivados','Pescados y mariscos', 'ALimentos grasos', 'Alimentos ricos en carbohidratos', 'Verduras y Hortalizas', 'Frutas']
+
+		@lista_gp_alimentos = [ Grupo_alimento.new(@grupos[0], ["Yogurt", 3.8, 4.9, 3.8]), Grupo_alimento.new(@grupos[0], ["Leche de vaca", 3.3, 4.8, 3.2]), Grupo_alimento.new(@grupos[0], ["Huevo frito", 14.1, 0.0, 19.5] )]#kcal = 231,9 , kcal = 61.2, kcal = 69
+		@lista_gp_alimentos_dl = Lista.new(@lista_gp_alimentos)
+
 	end
 
 	it "Debe existir un nodo con su valor." do
@@ -125,6 +130,11 @@ RSpec.describe Gema do
 	   expect(@lista_dl2.drop(2)).to eq([nil])
 	end
 
+
+	it "comprobrando el metodo max" do
+	   expect(@lista_gp_alimentos_dl.max).to eq(Grupo_alimento.new(@grupos[0], ["Huevo frito", 14.1, 0.0, 19.5] ))
+	end
+
 end
 
 
@@ -152,11 +162,11 @@ end
 # P8 ---------------------------------------------------------------------------------------------------- Comparable
 
 	it "Comprobar igualdad alimento1 consigo mismo." do
-	   expect(@alimento1 == @alimento1).to eq(true)
+	   expect(@alimento1 == @alimento1).to eq(0)
 	 end
 
 	it "Comprobar igualdad alimento1 con alimento2." do
-	   expect(@alimento3 == @alimento2).to eq(false)
+	   expect(@alimento3 == @alimento2).to eq(-1)
 	 end
 
 	it "Comprobar alimento3 < alimento1." do

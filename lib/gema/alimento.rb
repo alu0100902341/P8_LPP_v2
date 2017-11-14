@@ -1,6 +1,6 @@
 class Alimento
 
-attr_accessor :nombre, :proteinas, :glucidos, :lipidos, :kcal
+attr_accessor :nombre, :proteinas, :glucidos, :lipidos, :kcal_
 
   def initialize(nombre, prot, glu, lip)	
 
@@ -8,7 +8,7 @@ attr_accessor :nombre, :proteinas, :glucidos, :lipidos, :kcal
 	@proteinas = prot
 	@glucidos = glu	
 	@lipidos = lip
-	@kcal = 0
+	@kcal_ = 0
   end
 
   def to_s
@@ -16,8 +16,8 @@ attr_accessor :nombre, :proteinas, :glucidos, :lipidos, :kcal
   end
 
   def kcal
-	@kcal = ( (4 * @proteinas) + (4 * @glucidos) + (9 * @lipidos) )
-	return @kcal
+	@kcal_ = ( (4 * @proteinas) + (4 * @glucidos) + (9 * @lipidos) )
+	return @kcal_
   end
 
 end

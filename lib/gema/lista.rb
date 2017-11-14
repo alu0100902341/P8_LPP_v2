@@ -52,6 +52,10 @@ attr_accessor :array, :head, :tail
 	@array.each(&block)
   end
 
+  def max(&block)
+	@array.max(&block)
+  end
+
 
 end
 
