@@ -135,6 +135,10 @@ RSpec.describe Gema do
 	   expect(@lista_gp_alimentos_dl.max).to eq(Grupo_alimento.new(@grupos[0], ["Huevo frito", 14.1, 0.0, 19.5] ))
 	end
 
+	it "comprobrando el metodo min" do
+	   expect(@lista_gp_alimentos_dl.min).to eq(Grupo_alimento.new(@grupos[0], ["Leche de vaca", 3.3, 4.8, 3.2]))
+	end
+
 end
 
 
