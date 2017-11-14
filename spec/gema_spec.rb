@@ -53,6 +53,9 @@ RSpec.describe Gema do
 		@lista = [Nodo.new(0, 1, 5) ,Nodo.new(1, 2, 0), Nodo.new(2, 3, 1), Nodo.new(3, 4, 2), Nodo.new(4, 5, 3), Nodo.new(5, 0, 4) ]
 		@lista_dl = Lista.new(@lista)
 
+		@lista1 = [nil, nil, nil]
+		@lista_dl1 = Lista.new(@lista1)
+
 	end
 
 	it "Debe existir un nodo con su valor." do
@@ -84,6 +87,12 @@ RSpec.describe Gema do
 	   expect(@lista_dl.pop).to eq(4)
 	 end
 
+# P8 ---------------------------------------------------------------------------------------------------- Enumerable
+
+	it "comprobrando el metodo all? con un bloque vacio y no vacío" do
+	   expect(@lista_dl.all?).to eq(true)
+	   expect(@lista_dl1.all?).to eq(false)
+	end 
 
 end
 
@@ -109,14 +118,14 @@ end
 	   expect(@alimento1.class.superclass).to eq(Alimento)
 	 end
 
-# P8 ----------------------------------------------------------------------------------------------------
+# P8 ---------------------------------------------------------------------------------------------------- Comparable
 
 	it "Comprobar igualdad alimento1 consigo mismo." do
 	   expect(@alimento1 == @alimento1).to eq(true)
 	 end
 
 	it "Comprobar igualdad alimento1 con alimento2." do
-	   expect(@alimento1 == @alimento2).to eq(false)
+	   expect(@alimento3 == @alimento2).to eq(false)
 	 end
 
 	it "Comprobar alimento3 < alimento1." do

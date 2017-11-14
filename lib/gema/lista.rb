@@ -5,6 +5,7 @@ end
 
 class Lista
 
+include Enumerable
 attr_accessor :array, :head, :tail
 
   def initialize(vector)	
@@ -44,6 +45,11 @@ attr_accessor :array, :head, :tail
 	@tail = @array[-1]
 	return @tail.value
 
+  end
+
+  def each(&block)
+
+	@array.each(&block)
   end
 
 end
