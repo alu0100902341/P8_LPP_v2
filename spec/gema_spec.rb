@@ -112,7 +112,13 @@ RSpec.describe Gema do
 	   expect(@lista_dl.count).to eq(6)
 	   expect(@lista_dl1.count).to eq(3)
 	   expect(@lista_dl2.count).to eq(3)
-	end 
+	end
+
+	it "comprobrando el metodo detect" do
+	   expect(@lista_dl.detect{|i| i == Nodo.new(3, 4, 2)}).to eq(Nodo.new(3, 4, 2))
+	   expect(@lista_dl.detect{|i| i == Nodo.new(3, 4, 9)}).to eq(nil)
+	   expect(@lista_dl2.detect{|i| i == 1}).to eq(1)
+	end
 
 end
 
