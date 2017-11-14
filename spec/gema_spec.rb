@@ -109,6 +109,13 @@ end
 	   expect(@alimento1.class.superclass).to eq(Alimento)
 	 end
 
+	it "Comprobar igualdad alimento1 consigo mismo." do
+	   expect(@alimento1 == @alimento1).to eq(true)
+	 end
+
+	it "Comprobar igualdad alimento1 con alimento2." do
+	   expect(@alimento1 == @alimento2).to eq(false)
+	 end
 
 	
 
