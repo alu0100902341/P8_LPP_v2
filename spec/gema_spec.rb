@@ -59,10 +59,8 @@ RSpec.describe Gema do
 		@lista2 = [nil, 1, nil]
 		@lista_dl2 = Lista.new(@lista2)
 
-		@grupos = ['Huevos, lácteos y helados', 'Carnes y derivados','Pescados y mariscos', 'ALimentos grasos', 'Alimentos ricos en carbohidratos', 'Verduras y Hortalizas', 'Frutas']
-
-		@lista_gp_alimentos = [ Grupo_alimento.new(@grupos[0], ["Yogurt", 3.8, 4.9, 3.8]), Grupo_alimento.new(@grupos[0], ["Leche de vaca", 3.3, 4.8, 3.2]), Grupo_alimento.new(@grupos[0], ["Huevo frito", 14.1, 0.0, 19.5] )]#kcal = 231,9 , kcal = 61.2, kcal = 69
-		@lista_gp_alimentos_dl = Lista.new(@lista_gp_alimentos)
+		@lista_num = [1,7,3,4,9]
+		@lista_num_dl = Lista.new(@lista_num)
 
 	end
 
@@ -132,11 +130,15 @@ RSpec.describe Gema do
 
 
 	it "comprobrando el metodo max" do
-	   expect(@lista_gp_alimentos_dl.max).to eq(Grupo_alimento.new(@grupos[0], ["Huevo frito", 14.1, 0.0, 19.5] ))
+	   expect(@lista_num_dl.max).to eq(9)
 	end
 
 	it "comprobrando el metodo min" do
-	   expect(@lista_gp_alimentos_dl.min).to eq(Grupo_alimento.new(@grupos[0], ["Leche de vaca", 3.3, 4.8, 3.2]))
+	   expect(@lista_num_dl.min).to eq(1)
+	end
+
+	it "comprobrando el metodo sort" do
+	   expect(@lista_num_dl.sort).to eq([1,3,4,7,9])
 	end
 
 end

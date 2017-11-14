@@ -22,18 +22,7 @@ attr_reader :nombre_gp
 	end
 
 	def <=>(other) #1 if self>other; 0 if self==other; -1 if self<other
-		puts "Nombre GP :  #{@nombre_gp} == #{other.nombre_gp}"
-		comparison = @nombre_gp <=> other.nombre_gp
-		if comparison == 0
-			puts "Nombre Alimento :  #{@nombre} == #{other.nombre}"
-			comparison = @nombre <=> other.nombre
-			if comparison == 0
-				puts "Kcal :  #{self.kcal} == #{other.kcal}"
-				comparison = self.kcal <=> other.kcal
-			end
-		end
 
-		return comparison
 	end
 
 	def <(other) # self < other = -1
@@ -57,6 +46,7 @@ attr_reader :nombre_gp
 	end
 
 	def ==(other) #1 if self>other; 0 if self==other; -1 if self<other
+		puts "---------------------------------------------------"
 		puts "Nombre GP :  #{@nombre_gp} == #{other.nombre_gp}"
 		comparison = @nombre_gp <=> other.nombre_gp
 		if comparison == 0
