@@ -108,15 +108,17 @@ end
 	it "Comprobar pertenencia a jerarquía." do
 	   expect(@alimento1.class.superclass).to eq(Alimento)
 	 end
-	puts "Igualdad alimento1 con alimento1"
+
+# P8 ----------------------------------------------------------------------------------------------------
+
 	it "Comprobar igualdad alimento1 consigo mismo." do
 	   expect(@alimento1 == @alimento1).to eq(true)
 	 end
-	puts "Igualdad alimento1 con alimento2"
+
 	it "Comprobar igualdad alimento1 con alimento2." do
 	   expect(@alimento1 == @alimento2).to eq(false)
 	 end
-	puts "Comprobación alimento3 < alimento1"
+
 	it "Comprobar alimento3 < alimento1." do
 	   expect(@alimento3 < @alimento1).to eq(-1)
 	 end
@@ -125,6 +127,18 @@ end
 	   expect(@alimento3 > @alimento2).to eq(1)
 	 end
 
+	it "Comprobar alimento3 <= alimento1." do
+	   expect(@alimento3 <= @alimento1).to eq(-1)
+	 end
+
+	it "Comprobación alimento3 >= alimento2." do
+	   expect(@alimento3 >= @alimento2).to eq(1)
+	 end
+
+	
+	it "Comprobación alimento2 >= alimento1." do
+	   expect(@alimento2 >= @alimento1).to eq(-1) #Devuelve -1, eso significa que alimento2 no es >= a alimento1
+	 end
 	
 
   end

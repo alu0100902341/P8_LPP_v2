@@ -47,5 +47,15 @@ attr_reader :nombre_gp
 		self.kcal <=> other.kcal
 	end
 
+	def <=(other) # self <= other = -1 || 0
+		puts "#{self.kcal} <= #{other.kcal}"
+		self.kcal <=> other.kcal
+	end
+
+	def >=(other) # self >= other = 1 || 0
+		puts "#{self.kcal} >= #{other.kcal}"
+		self.kcal <=> other.kcal
+	end
+
 
 end
