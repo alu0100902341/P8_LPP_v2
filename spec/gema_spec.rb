@@ -120,6 +120,11 @@ RSpec.describe Gema do
 	   expect(@lista_dl2.detect{|i| i == 1}).to eq(1)
 	end
 
+	it "comprobrando el metodo drop" do
+	   expect(@lista_dl.drop(2)).to eq([Nodo.new(2, 3, 1), Nodo.new(3, 4, 2), Nodo.new(4, 5, 3), Nodo.new(5, 0, 4)])
+	   expect(@lista_dl2.drop(2)).to eq([nil])
+	end
+
 end
 
 
