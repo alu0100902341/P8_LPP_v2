@@ -92,21 +92,25 @@ end
 
 	before :each do
 
-		@gp_alimento = Grupo_alimento.new( "Huevos, lácteos y helados", ["Huevo frito", 14.1, 0.0, 19.5] )	
-
+		@alimento1 = Grupo_alimento.new( "Huevos, lácteos y helados", ["Huevo frito", 14.1, 0.0, 19.5] )	
+		@alimento2 = Grupo_alimento.new( "Huevos, lácteos y helados", ["Leche de vaca", 3.3, 4.8, 3.2] )
+		@alimento3 = Grupo_alimento.new( "Carnes y derivados','Pescados y mariscos", ["Bacalao", 17.7, 0.0, 0.4] )
 	end
 
 	it "Comprobar pertenencia a las clases." do
-	   expect(@gp_alimento.class).to eq(Grupo_alimento)
+	   expect(@alimento1.class).to eq(Grupo_alimento)
 	 end
 
 	it "Comprobar tipo de dato." do
-	   expect(@gp_alimento.is_a? Grupo_alimento).to eq(true)
+	   expect(@alimento1.is_a? Grupo_alimento).to eq(true)
 	 end
 
 	it "Comprobar pertenencia a jerarquía." do
-	   expect(@gp_alimento.class.superclass).to eq(Alimento)
+	   expect(@alimento1.class.superclass).to eq(Alimento)
 	 end
+
+
+	
 
   end
   describe Piramide do
@@ -122,7 +126,7 @@ end
 
 		@grupo = "Huevos, lácteos y helados"
 		
-		@gp1 = [Grupo_alimento.new(@grupo, ["Huevo frito", 14.1, 0.0, 19.5]), Grupo_alimento.new(@grupo, ["Leche de vaca", 3.3, 4.8, 3.2]), Grupo_alimento.new(@grupo, ["Yogurt", 3.8, 4.9, 3.8])] 
+		@gp1 = [Grupo_alimento.new(@grupo, ["Huevo frito", 14.1, 0.0, 19.5] ), Grupo_alimento.new(@grupo, ["Leche de vaca", 3.3, 4.8, 3.2]), Grupo_alimento.new(@grupo, ["Yogurt", 3.8, 4.9, 3.8])] 
 
 		@gp2 = [ Grupo_alimento.new( @grupos[1], ["Cerdo", 21.5, 0.0, 6.3] ), Grupo_alimento.new( @grupos[1], ["Ternera", 21.1, 0.0, 3.1] ), Grupo_alimento.new( @grupos[1], ["Pollo", 20.6, 0.0, 5.6] ) ] 
 
@@ -147,6 +151,7 @@ end
 	it "Comprobar tipo de dato." do
 	   expect(@piramide.is_a? Piramide).to eq(true)
 	 end
+
 
   end
 

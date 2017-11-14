@@ -2,6 +2,8 @@ require "./lib/gema/alimento"
 
 class Grupo_alimento < Alimento
 
+
+
 	def initialize(nombre_grupo, datos_alimento)
 
 
