@@ -106,6 +106,12 @@ RSpec.describe Gema do
 	it "comprobrando el metodo collect" do
 	   expect(@lista_dl.map{|i| i}).to eq(@lista_dl.array)
 	   expect(@lista_dl2.collect{|i| i}).to eq([nil, 1, nil])
+	end
+
+	it "comprobrando el metodo count" do
+	   expect(@lista_dl.count).to eq(6)
+	   expect(@lista_dl1.count).to eq(3)
+	   expect(@lista_dl2.count).to eq(3)
 	end 
 
 end
