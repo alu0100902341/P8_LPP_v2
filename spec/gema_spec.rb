@@ -1,7 +1,6 @@
+#Esto es un comentario
+
 require "spec_helper"
-require "./lib/alimento"
-require "./lib/lista"
-require "./lib/grupo_alimentos"
 
 RSpec.describe Gema do
   it "has a version number" do
@@ -89,34 +88,64 @@ RSpec.describe Gema do
 end
 
 
-  describe Grupo_alimentos do
+  describe Grupo_alimento do
 
 	before :each do
 
-		@grupos = [ "Huevos, lácteos y helados", "Carnes y derivados", "Pescados y mariscos", "ALimentos grasos", "Alimentos ricos en carbohidratos", "Verduras y Hortalizas", "Frutas" ]
+		@gp_alimento = Grupo_alimento.new( "Huevos, lácteos y helados", ["Huevo frito", 14.1, 0.0, 19.5] )	
 
-		@gp1 = Lista.new( [ Alimento.new("Huevo frito", 14.1, 0.0, 19.5), Alimento.new("Leche de vaca", 3.3, 4.8, 3.2), Alimento.new("Yogurt", 3.8, 4.9, 3.8) ] )
-
-		@gp2 = Lista.new( [ Alimento.new("Cerdo", 21.5, 0.0, 6.3), Alimento.new("Ternera", 21.1, 0.0, 3.1), Alimento.new("Pollo", 20.6, 0.0, 5.6) ] )
-
-		@gp3 = Lista.new( [ Alimento.new("Bacalao", 17.7, 0.0, 0.4), Alimento.new("Atún", 21.5, 0.0, 15.5), Alimento.new("Salmón", 19.9, 0.0, 13.6) ] )
-
-		@gp4 = Lista.new( [ Alimento.new("Aceite de oliva", 0.0, 0.2, 99.6), Alimento.new("Mantequilla", 0.7, 0.0, 83.2), Alimento.new("Chocolate", 5.3, 47.0, 30.0) ] )
-
-		@gp5 = Lista.new( [ Alimento.new("Azúcar", 0.0, 99.8, 0.0), Alimento.new("Arroz", 6.8, 77.7, 0.6), Alimento.new("Lentejas", 23.5, 52.0, 1.4), Alimento.new("Papas", 2.0, 15.4, 0.1) ] )
-
-		@gp6 = Lista.new( [ Alimento.new("Manzana", 0.3, 12.4, 0.4), Alimento.new("Plátanos", 1.2, 21.4, 0.2), Alimento.new("Pera", 0.5, 12.7, 0.3) ] )
-
-		@grupos_alimentos = Grupo_alimentos.new( @grupos, [ @gp1, @gp2, @gp3, @gp4, @gp5, @gp6 ])
 	end
 
-
 	it "Comprobar pertenencia a las clases." do
-	   expect(@grupos_alimentos.class).to eq(Grupo_alimentos)
+	   expect(@gp_alimento.class).to eq(Grupo_alimento)
+	 end
+
+	it "Comprobar tipo de dato." do
+	   expect(@gp_alimento.is_a? Grupo_alimento).to eq(true)
 	 end
 
 	it "Comprobar pertenencia a jerarquía." do
-	   expect(@grupos_alimentos.class.superclass).to eq(Lista)
+	   expect(@gp_alimento.class.superclass).to eq(Alimento)
+	 end
+
+  end
+  describe Piramide do
+
+
+#@gp1 = [ Grupo_alimento.new( "Huevos, lácteos y helados", ["Huevo frito", 14.1, 0.0, 19.5] ), Grupo_alimento.new( "Huevos, lácteos y helados", ["Leche de vaca", 3.3, 4.8, 3.2] ), Grupo_alimento.new( "Huevos, lácteos y helados", ["Yogurt", 3.8, 4.9, 3.8] ) ] 
+
+	before :each do
+
+		@grupos = ['Huevos, lácteos y helados', 'Carnes y derivados','Pescados y mariscos', 'ALimentos grasos', 'Alimentos ricos en carbohidratos', 'Verduras y Hortalizas', 'Frutas']
+
+		#puts "#{@grupos[0]}"
+
+		@grupo = "Huevos, lácteos y helados"
+		
+		@gp1 = [Grupo_alimento.new(@grupo, ["Huevo frito", 14.1, 0.0, 19.5]), Grupo_alimento.new(@grupo, ["Leche de vaca", 3.3, 4.8, 3.2]), Grupo_alimento.new(@grupo, ["Yogurt", 3.8, 4.9, 3.8])] 
+
+		@gp2 = [ Grupo_alimento.new( @grupos[1], ["Cerdo", 21.5, 0.0, 6.3] ), Grupo_alimento.new( @grupos[1], ["Ternera", 21.1, 0.0, 3.1] ), Grupo_alimento.new( @grupos[1], ["Pollo", 20.6, 0.0, 5.6] ) ] 
+
+		@gp3 = [ Grupo_alimento.new( @grupos[2], ["Bacalao", 17.7, 0.0, 0.4] ), Grupo_alimento.new( @grupos[2], ["Atún", 21.5, 0.0, 15.5] ), Grupo_alimento.new( @grupos[2], ["Salmón", 19.9, 0.0, 13.6] ) ]
+
+		@gp4 = [ Grupo_alimento.new( @grupos[3], ["Aceite de oliva", 0.0, 0.2, 99.6] ), Grupo_alimento.new( @grupos[3], ["Mantequilla", 0.7, 0.0, 83.2] ), Grupo_alimento.new( @grupos[3], ["Chocolate", 5.3, 47.0, 30.0] ) ]
+
+		@gp5 = [ Grupo_alimento.new( @grupos[4], ["Azúcar", 0.0, 99.8, 0.0] ), Grupo_alimento.new( @grupos[4], ["Arroz", 6.8, 77.7, 0.6] ), Grupo_alimento.new( @grupos[4], ["Lentejas", 23.5, 52.0, 1.4] ), Grupo_alimento.new( @grupos[4], ["Papas", 2.0, 15.4, 0.1] ) ]
+
+		@gp6 = [ Grupo_alimento.new( @grupos[5], ["Tomate", 1.0, 3.5, 0.2] ), Grupo_alimento.new( @grupos[5], ["Cebolla", 1.3, 5.8, 0.3] ), Grupo_alimento.new( @grupos[5], ["Calabaza", 1.1, 4.8, 0.1] ) ] 
+
+		@gp7 = [ Grupo_alimento.new( @grupos[6], ["Manzana", 0.3, 12.4, 0.4] ), Grupo_alimento.new( @grupos[6], ["Plátanos", 1.2, 21.4, 0.2] ), Grupo_alimento.new( @grupos[6], ["Pera", 0.5, 12.7, 0.3] ) ]
+
+		@piramide = Piramide.new( [ @gp1, @gp2, @gp3, @gp4, @gp5, @gp6, @gp7 ] )
+
+	end
+
+	it "Comprobar pertenencia a las clases." do
+	   expect(@piramide.class).to eq(Piramide)
+	 end
+
+	it "Comprobar tipo de dato." do
+	   expect(@piramide.is_a? Piramide).to eq(true)
 	 end
 
   end

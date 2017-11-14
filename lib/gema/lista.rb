@@ -3,7 +3,7 @@ Nodo = Struct.new(:value, :next, :prev) do
 
 end
 
-class Lista < Nodo
+class Lista
 
 attr_accessor :array, :head, :tail
 

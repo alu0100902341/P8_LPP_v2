@@ -1,5 +1,9 @@
 require "bundler/setup"
 require "gema"
+require "gema/alimento"
+require "gema/lista"
+require "gema/grupo_alimentos"
+require "gema/piramide"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
