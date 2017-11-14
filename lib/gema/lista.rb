@@ -52,5 +52,6 @@ attr_accessor :array, :head, :tail
 	@array.each(&block)
   end
 
+
 end
 

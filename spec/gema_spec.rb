@@ -103,6 +103,11 @@ RSpec.describe Gema do
 	   expect(@lista_dl2.any?).to eq(true)
 	end 
 
+	it "comprobrando el metodo collect" do
+	   expect(@lista_dl.map{|i| i}).to eq(@lista_dl.array)
+	   expect(@lista_dl2.collect{|i| i}).to eq([nil, 1, nil])
+	end 
+
 end
 
 
