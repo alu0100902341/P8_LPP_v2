@@ -56,6 +56,9 @@ RSpec.describe Gema do
 		@lista1 = [nil, nil, nil]
 		@lista_dl1 = Lista.new(@lista1)
 
+		@lista2 = [nil, 1, nil]
+		@lista_dl2 = Lista.new(@lista2)
+
 	end
 
 	it "Debe existir un nodo con su valor." do
@@ -92,6 +95,12 @@ RSpec.describe Gema do
 	it "comprobrando el metodo all? con un bloque vacio y no vacío" do
 	   expect(@lista_dl.all?).to eq(true)
 	   expect(@lista_dl1.all?).to eq(false)
+	end 
+
+	it "comprobrando el metodo any? con un bloque vacio y no vacío y uno casi vacío" do
+	   expect(@lista_dl.any?).to eq(true)
+	   expect(@lista_dl1.any?).to eq(false)
+	   expect(@lista_dl2.any?).to eq(true)
 	end 
 
 end
