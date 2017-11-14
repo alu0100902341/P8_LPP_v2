@@ -92,9 +92,9 @@ end
 
 	before :each do
 
-		@alimento1 = Grupo_alimento.new( "Huevos, lácteos y helados", ["Huevo frito", 14.1, 0.0, 19.5] )	
-		@alimento2 = Grupo_alimento.new( "Huevos, lácteos y helados", ["Leche de vaca", 3.3, 4.8, 3.2] )
-		@alimento3 = Grupo_alimento.new( "Carnes y derivados','Pescados y mariscos", ["Bacalao", 17.7, 0.0, 0.4] )
+		@alimento1 = Grupo_alimento.new( "Huevos, lácteos y helados", ["Huevo frito", 14.1, 0.0, 19.5] )	#kcal = 231,9
+		@alimento2 = Grupo_alimento.new( "Huevos, lácteos y helados", ["Leche de vaca", 3.3, 4.8, 3.2] )	#kcal = 61,2
+		@alimento3 = Grupo_alimento.new( "Carnes y derivados','Pescados y mariscos", ["Bacalao", 17.7, 0.0, 0.4] )	#kcal = 74,4
 	end
 
 	it "Comprobar pertenencia a las clases." do
@@ -108,13 +108,21 @@ end
 	it "Comprobar pertenencia a jerarquía." do
 	   expect(@alimento1.class.superclass).to eq(Alimento)
 	 end
-
+	puts "Igualdad alimento1 con alimento1"
 	it "Comprobar igualdad alimento1 consigo mismo." do
 	   expect(@alimento1 == @alimento1).to eq(true)
 	 end
-
+	puts "Igualdad alimento1 con alimento2"
 	it "Comprobar igualdad alimento1 con alimento2." do
 	   expect(@alimento1 == @alimento2).to eq(false)
+	 end
+	puts "Comprobación alimento3 < alimento1"
+	it "Comprobar alimento3 < alimento1." do
+	   expect(@alimento3 < @alimento1).to eq(-1)
+	 end
+
+	it "Comprobación alimento3 > alimento2." do
+	   expect(@alimento3 > @alimento2).to eq(1)
 	 end
 
 	
